@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.myproject">
+
+    <application
+        android:allowBackup="true"
+        android:background="@drawable/download"
+        android:icon="@mipmap/ic_launcher"
+        android:label="Awake"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        >
+        <activity android:name=".activities.AddFundActivity"></activity>
+        <activity android:name=".activities.SettingActivity" />
+        <activity android:name=".activities.TransactionHistoryActivity" />
+        <activity android:name=".activities.CardPinActivity" />
+        <activity android:name=".activities.CardActivity" />
+        <activity android:name=".activities.UtilityBillsPin2Activity" />
+        <activity android:name=".activities.DataPlanPin2Activity" />
+        <activity android:name=".activities.SlideRowActivity" />
+        <activity android:name=".activities.UtilityBillReceiptActivity" />
+        <activity android:name=".activities.BuyCreditPinActivity" />
+        <activity
+            android:name=".activities.DashboardActivity"
+            android:label="@string/title_activity_dashboard"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".activities.HomeActivity" />
+        <activity android:name=".activities.ForgotPasswordActivity" />
+        <activity android:name=".activities.SetPinActivity" />
+        <activity android:name=".activities.login.LoginActivity" />
+        <activity android:name=".activities.SignupActivity" />
+        <activity android:name=".activities.SplashScreenActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
+
+</manifest>

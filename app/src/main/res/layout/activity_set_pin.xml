@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.SetPinActivity"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:src="@drawable/ic_battery"
+            android:layout_height="wrap_content">
+        </ImageView>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_cellular"/>
+        <ImageView
+            android:layout_marginLeft="7dp"
+            android:layout_width="wrap_content"
+            android:src="@drawable/ic_wifi"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="12:30pm"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:layout_marginLeft="7dp"
+            android:layout_marginRight="10dp"
+
+            />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="121dp"
+        android:layout_marginLeft="31dp"
+        android:layout_marginRight="21dp"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Set Pin"
+            android:textSize="43sp"
+            android:textColor="@color/colorBlack"
+
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:layout_marginTop="11dp"
+            android:textColor="@color/colorBlack"
+            android:text="Please enter you 4-digits security PIN, this PIN will be used to verify transactions "
+            />
+
+
+
+    <com.goodiebag.pinview.Pinview
+        android:id="@+id/pinview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="39dp"
+        app:pinWidth="45dp"
+        app:pinHeight="45dp"
+        app:pinLength="4"
+        app:cursorVisible="false"
+        app:forceKeyboard="true"
+        app:inputType="number"
+        app:password="false"/>
+
+
+    <Button
+        android:id="@+id/BtnSignUp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Save Pin"
+        android:textAllCaps="false"
+        android:background="@color/colorBlue"
+        android:textColor="#ffffff"
+        android:layout_marginTop="47dp"
+        android:textSize="16dp"/>
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="200dp">
+
+            <TextView
+                android:id="@+id/text1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorBlack"
+                android:text="Are you having any issues?"
+                android:textStyle="normal"
+                android:textSize="14sp"
+
+
+                />
+
+            <TextView
+                android:id="@+id/text2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/text1"
+                android:text="@string/Help_text"
+                android:textStyle="bold"
+                android:textAllCaps="false"
+                android:layout_marginLeft="150dp"
+                android:textColor="#202F32"
+                android:layout_toRightOf="@id/text1" />
+
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,40 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/BuyData"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="12dp"
+    android:background="@drawable/boxshadow"
+    android:padding="20dp">
+
+    <ImageView
+        android:id="@+id/networkImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_data"></ImageView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp">
+
+        <TextView
+            android:id="@+id/networkPlan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nunito_sans"
+            android:text="GLO - 10MB @ N850 - 08034604893"
+            android:textColor="#202F32"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/dated"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/networkPlan"
+            android:fontFamily="@font/nunito_sans"
+            android:text="22/05/2019"
+            android:textColor="#202F32"
+            android:textSize="12sp" />
+    </RelativeLayout>
+
+</LinearLayout>

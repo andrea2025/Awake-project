@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activities.BuyCreditPinActivity"
+    android:fillViewport="true">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="33dp">
+
+                <ImageView
+                    android:id="@+id/arrowBar1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="50dp"
+                    android:src="@drawable/ic_arrow"
+                    />
+
+                <TextView
+                    android:id="@+id/textBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:fontFamily="@font/nunito_sans"
+                    android:text="Buy credit card"
+                    android:textAllCaps="true"
+                    android:textStyle="bold"
+                    android:textSize="18sp" />
+
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/profile_image"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_marginLeft="70dp"
+                    android:layout_toRightOf="@+id/textBar"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/download"
+                    app:civ_border_color="#FF000000"
+                    app:civ_border_width="1dp" />
+
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:orientation="vertical">
+
+                <androidx.viewpager.widget.ViewPager
+                    android:id="@+id/viewpagerCreditPin"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_marginTop="20dp"
+                android:id="@+id/dotsLayoutCreditPin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_below="@id/viewpagerCreditPin"
+                android:orientation="horizontal" />
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="32dp"
+                        android:alpha="0.5"
+                        android:fontFamily="@font/nunito_sans"
+                        android:text="Enter Phone Number"
+                        android:textColor="#202F32"
+                        android:textSize="14dp" />
+
+                    <EditText
+                        android:id="@+id/editText1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawablePadding="20dp"
+                        android:inputType="number"
+                        android:paddingTop="6dp"
+
+                        />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="22dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:alpha="0.5"
+                        android:text="Enter Amount "
+                        android:fontFamily="@font/nunito_sans"
+                        android:textColor="#202F32"
+                        android:textSize="14dp" />
+
+
+                    <EditText
+                        android:id="@+id/datatext1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawablePadding="15dp"
+                        android:inputType="number" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="22dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Select Payment Method"
+                        android:fontFamily="@font/nunito_sans"
+                        android:textColor="#202F32"
+                        android:alpha="0.5"
+                        android:textSize="14dp"/>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <Spinner
+                            android:id="@+id/SpinnerCredit"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+
+                            android:layout_alignParentRight="true"
+                            android:spinnerMode="dropdown"
+                            android:backgroundTint="@color/colorBlue"
+                            android:layout_marginTop="15dp"
+                            android:entries="@array/array_name"
+                            />
+
+                        <View
+                            android:id="@+id/datatext2"
+                            android:layout_below="@+id/SpinnerCredit"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:drawablePadding="20dp"
+                            android:background="#000"/>
+
+
+                    </RelativeLayout>
+                </LinearLayout>
+
+
+
+                <ToggleButton
+
+                    android:id="@+id/radioLink"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:alpha="0.5"
+                    android:padding="4dp"
+                    android:background="#0A3F99"
+                    android:text="Pay with Card"
+                    android:fontFamily="@font/nunito_sans"
+                    android:textColor="#000"
+                    android:textSize="12dp"
+                    />
+
+                <LinearLayout
+                    android:id="@+id/ShowContent"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                   >
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="22dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:alpha="0.5"
+                        android:text="Enter Card Details "
+                        android:textColor="#202F32"
+                        android:textSize="14dp" />
+
+
+                    <EditText
+                        android:id="@+id/datatext3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawablePadding="15dp"
+                        android:inputType="number" />
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="22dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:alpha="0.5"
+                        android:text="Enter Cardholders Name "
+                        android:fontFamily="@font/nunito_sans"
+                        android:textColor="#202F32"
+                        android:textSize="14dp" />
+
+
+                    <EditText
+                        android:id="@+id/datatext4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawablePadding="15dp"
+                        android:inputType="number" />
+
+
+                </LinearLayout>
+
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Enter Pin"
+                        android:textColor="#202F32"
+                        android:fontFamily="@font/nunito_sans"
+                        android:alpha="0.5"
+                        android:textSize="15dp"
+                        android:layout_marginTop="15dp"/>
+
+                    <com.goodiebag.pinview.Pinview
+                        android:id="@+id/pinview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="39dp"
+                        app:pinWidth="45dp"
+                        app:pinHeight="45dp"
+                        app:pinLength="4"
+                        app:cursorVisible="false"
+                        app:forceKeyboard="true"
+                        app:inputType="number"
+                        app:password="false"/>
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/BtnCreditPin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="70dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="80dp"
+                android:layout_marginRight="70dp"
+                android:background="@color/colorBlue"
+                android:fontFamily="@font/nunito_sans"
+                android:text="Buy"
+                android:textAllCaps="false"
+                android:textColor="#ffffff"
+                android:textSize="16dp" />
+
+
+
+        </LinearLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/bottom_sheet"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/bottom_sheet_behavior">
+
+            <include layout="@layout/bottom_sheet" />
+
+        </androidx.core.widget.NestedScrollView>
+
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+</ScrollView>

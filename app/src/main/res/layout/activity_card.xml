@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activities.CardActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="33dp">
+
+            <ImageView
+                android:id="@+id/cardArrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="50dp"
+                android:src="@drawable/ic_arrow"
+
+                />
+
+            <TextView
+                android:id="@+id/textBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/nunito_sans"
+                android:text="Card"
+                android:textSize="18sp" />
+
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profile_image"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginLeft="145dp"
+                android:layout_toRightOf="@+id/textBar"
+                android:scaleType="centerCrop"
+                android:src="@drawable/download"
+                app:civ_border_color="#FF000000"
+                app:civ_border_width="1dp" />
+
+        </RelativeLayout>
+
+       <LinearLayout
+           android:id="@+id/BtnAddCard"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal"
+           android:layout_marginTop="30dp"
+           android:layout_gravity="end">
+
+           <ImageView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:src="@drawable/ic_plusgreen"
+               android:layout_marginRight="8dp"
+               />
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="ADD CARD"
+               />
+       </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/debitcard"
+            android:paddingBottom="25dp">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="end">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="8dp"
+                    android:src="@drawable/ic_subtracticon"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="DELETE CARD"
+                    android:fontFamily="@font/nunito_sans"
+                    android:textStyle="bold"
+                    android:layout_marginRight="10dp"
+                    android:textColor="#fff"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+
+                android:background="#073C60">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Zenith Bank"
+                    android:layout_marginLeft="20dp"
+                    android:textStyle="bold"
+                    android:padding="10dp"
+                    android:textColor="#fff"
+                    android:textSize="15sp"/>
+
+            </LinearLayout>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="20dp"
+    >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:lineHeight="15dp"
+        android:text="22848752756\n7492 3825 XXXX XXXX\n04/23"
+        android:textColor="#fff"
+        android:textSize="10sp"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="6dp"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="20dp"
+        android:src="@drawable/ic_card_icon"/>
+</RelativeLayout>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/debitcard_green"
+            android:paddingBottom="25dp">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="end">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="8dp"
+                    android:src="@drawable/ic_subtracticon"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="DELETE CARD"
+                    android:fontFamily="@font/nunito_sans"
+                    android:textStyle="bold"
+                    android:layout_marginRight="10dp"
+                    android:textColor="#fff"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+
+                android:background="#75382A">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Zenith Bank"
+                    android:layout_marginLeft="20dp"
+                    android:textStyle="bold"
+                    android:padding="10dp"
+                    android:textColor="#fff"
+                    android:textSize="15sp"/>
+
+            </LinearLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:lineHeight="15dp"
+                    android:text="22848752756\n7492 3825 XXXX XXXX\n04/23"
+                    android:textColor="#fff"
+                    android:textSize="10sp"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="6dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:src="@drawable/ic_card_icon"/>
+            </RelativeLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>
+

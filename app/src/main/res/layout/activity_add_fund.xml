@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+
+    tools:context=".activities.AddFundActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="33dp">
+
+            <ImageView
+                android:id="@+id/FundArrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="50dp"
+                android:src="@drawable/ic_arrow"
+
+
+                />
+
+            <TextView
+                android:id="@+id/textBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/nunito_sans"
+                android:text="Add funds to wallet"
+                android:textStyle="bold"
+                android:textAllCaps="true"
+                android:textSize="18sp" />
+
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profile_image"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginLeft="40dp"
+                android:layout_toRightOf="@+id/textBar"
+                android:scaleType="centerCrop"
+                android:src="@drawable/download"
+                app:civ_border_color="#FF000000"
+                app:civ_border_width="1dp" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:orientation="vertical">
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/viewpagerFund"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="20dp"
+            android:id="@+id/dotsLayoutFund"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_below="@id/viewpagerFund"
+            android:orientation="horizontal" />
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="60dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Enter Amount"
+                    android:textColor="#202F32"
+                    android:alpha="0.5"
+                    android:textSize="14dp"
+                    android:fontFamily="@font/nunito_sans"
+                    />
+
+                <EditText
+                    android:id="@+id/editText1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="15dp"
+                    android:paddingTop="6dp"
+                    android:inputType="number"
+                    />
+            </LinearLayout>
+
+
+
+
+
+            <Button
+                android:id="@+id/BtnFund"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunito_sans"
+                android:textSize="16dp"
+                android:text="Add Fund"
+                android:textAllCaps="false"
+                android:background="@color/colorBlue"
+                android:textColor="#ffffff"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="68dp"
+                android:layout_marginRight="72dp"/>
+
+
+
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+</LinearLayout>
