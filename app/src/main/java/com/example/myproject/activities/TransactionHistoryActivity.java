@@ -96,7 +96,7 @@ public class TransactionHistoryActivity extends AppCompatActivity {
         });
 
     }
-
+//dot layout was created
     private void createDots(int current_position) {
         if (dotsLayout != null)
             dotsLayout.removeAllViews();
