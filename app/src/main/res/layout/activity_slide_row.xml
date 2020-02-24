@@ -5,18 +5,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:layout_marginLeft="40dp"
-    android:layout_marginRight="40dp"
-
+    android:layout_marginLeft="43dp"
+    android:layout_marginRight="43dp"
     tools:context=".activities.SlideRowActivity">
 
     <LinearLayout
 
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginLeft="7dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginRight="7dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="0dp"
         android:background="@drawable/cardtemplate"
         android:orientation="vertical"
 

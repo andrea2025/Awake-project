@@ -1,4 +1,5 @@
 package com.example.myproject.activities;
+
 import com.example.myproject.adapters.CardLayoutAdapter;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 
@@ -21,7 +22,9 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.ToggleButton;
+
 import com.example.myproject.R;
+import com.google.android.material.bottomsheet.BottomSheetDialog;
 
 
 public class BuyCreditPinActivity extends AppCompatActivity {
@@ -29,7 +32,7 @@ public class BuyCreditPinActivity extends AppCompatActivity {
     NestedScrollView bottomSheet;
     BottomSheetBehavior bottomSheetBehavior;
     ImageView imageView;
-    private int[] layouts={R.layout.activity_slide_row,R.layout.debit_card,R.layout.debit_card_green};
+    private int[] layouts = {R.layout.activity_slide_row, R.layout.debit_card, R.layout.debit_card_green};
     ViewPager viewPager;
     LinearLayout dotsLayouts;
     ImageView[] dots;
@@ -45,42 +48,23 @@ public class BuyCreditPinActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_buy_credit_pin);
 
-        ToggleButton toggle = (ToggleButton) findViewById(R.id.radioLink);
-        showContent = (LinearLayout) findViewById(R.id.ShowContent);
+        final RadioButton cardButton= findViewById(R.id.radioLink);
+        final RadioButton cashButton = findViewById(R.id.radioLink1);
+        showContent = findViewById(R.id.ShowContent);
 
-        toggle.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-                                              public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                                                  if (isChecked) {
-                                                      showContent.setVisibility(View.VISIBLE);
-                                                  } else {
-                                                      showContent.setVisibility(View.GONE);
-                                                  }
-                                              }
-                                          });
-
-//            @Override
-//            public void onToggleClicked(View view) {
-//            boolean on = ((ToggleButton) view).isChecked();
-//
-//
-//                if (radioButton.isChecked()) {
-//
-//                    showContent.setVisibility(View.VISIBLE);
-//
-//                }
-//                else{
-//                    showContent.setVisibility(View.GONE);
-//                }
-//
-//
-//            }
-//        });
-
-
+        cardButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (cardButton.isChecked()) {
+                    showContent.setVisibility(View.VISIBLE);
+                } else if (cashButton.isChecked()){
+                    showContent.setVisibility(View.GONE);
+                }
+            }
+        });
 
 
         Spinner spinner = (Spinner) findViewById(R.id.SpinnerCredit);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.array_name,android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.array_name, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
 
@@ -95,34 +79,37 @@ public class BuyCreditPinActivity extends AppCompatActivity {
             }
         });
 
-        button  = (Button) findViewById(R.id.BtnCreditPin);
-        btnRateApp= findViewById(R.id.BtnRateApp);
+        button = (Button) findViewById(R.id.BtnCreditPin);
+        btnRateApp =(Button) findViewById(R.id.BtnRateApp);
         bottomSheet = (NestedScrollView) findViewById(R.id.bottom_sheet);
         bottomSheetBehavior = BottomSheetBehavior.from(bottomSheet);
 
+        final View dialogView = getLayoutInflater().inflate(R.layout.bottom_sheet, null);
+        final BottomSheetDialog dialog = new BottomSheetDialog(BuyCreditPinActivity.this);
+        Button rate = dialogView.findViewById(R.id.BtnRateApp);
+        dialog.setContentView(dialogView);
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view ) {
-
-                    bottomSheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
-
-
-
-
-        }
-        });
-        btnRateApp.setOnClickListener(new View.OnClickListener() {
-            @Override
             public void onClick(View view) {
-                bottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                ((View) dialogView.getParent()).setBackgroundColor(getResources().getColor(android.R.color.transparent));
+                dialog.show();
             }
         });
+
+        rate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.hide();
+            }
+        });
+
 
         bottomSheetBehavior.setPeekHeight(0);
 
         dotsLayouts = findViewById(R.id.dotsLayoutCreditPin);
         viewPager = findViewById(R.id.viewpagerCreditPin);
-        cardLayoutAdapter = new CardLayoutAdapter(layouts,BuyCreditPinActivity.this);
+        cardLayoutAdapter = new CardLayoutAdapter(layouts, BuyCreditPinActivity.this);
         viewPager.setAdapter(cardLayoutAdapter);
         createDots(0);
 
@@ -147,24 +134,25 @@ public class BuyCreditPinActivity extends AppCompatActivity {
 
 
     }
-    private void createDots(int current_position){
-        if(dotsLayouts != null);
+
+    private void createDots(int current_position) {
+        if (dotsLayouts != null) ;
         dotsLayouts.removeAllViews();
         dots = new ImageView[layouts.length];
-        for(int i = 0; i < layouts.length; i++){
+        for (int i = 0; i < layouts.length; i++) {
             dots[i] = new ImageView(this);
-            if(i == current_position){
-                dots[i].setImageDrawable(ContextCompat.getDrawable(this,R.drawable.active));
-            }else {
-                dots[i].setImageDrawable(ContextCompat.getDrawable(this,R.drawable.inactive));
+            if (i == current_position) {
+                dots[i].setImageDrawable(ContextCompat.getDrawable(this, R.drawable.active));
+            } else {
+                dots[i].setImageDrawable(ContextCompat.getDrawable(this, R.drawable.inactive));
             }
-            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,ViewGroup.LayoutParams.WRAP_CONTENT);
-            params.setMargins(6,0,6,0);
-            dotsLayouts.addView(dots[i],params);
+            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+            params.setMargins(6, 0, 6, 0);
+            dotsLayouts.addView(dots[i], params);
         }
 
     }
 
-    }
+}
 
 

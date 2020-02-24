@@ -17,7 +17,7 @@
         <activity android:name=".activities.CardPinActivity" />
         <activity android:name=".activities.CardActivity" />
         <activity android:name=".activities.UtilityBillsPin2Activity" />
-        <activity android:name=".activities.DataPlanPin2Activity" />
+        <activity android:name=".activities.DataPlanPinActivity" />
         <activity android:name=".activities.SlideRowActivity" />
         <activity android:name=".activities.UtilityBillReceiptActivity" />
         <activity android:name=".activities.BuyCreditPinActivity" />

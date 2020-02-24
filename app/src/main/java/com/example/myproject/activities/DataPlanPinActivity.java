@@ -16,13 +16,13 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.Spinner;
-import android.widget.ToggleButton;
 
 import com.example.myproject.R;
 import com.example.myproject.adapters.CardLayoutAdapter;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
+import com.google.android.material.bottomsheet.BottomSheetDialog;
 
-public class DataPlanPin2Activity extends AppCompatActivity {
+public class DataPlanPinActivity extends AppCompatActivity {
     Button button;
     Button btnFail;
     NestedScrollView bottomSheet;
@@ -36,7 +36,7 @@ public class DataPlanPin2Activity extends AppCompatActivity {
     CardLayoutAdapter cardLayoutAdapter;
 
     ViewPager viewPager;
-    private int[] layouts = {R.layout.activity_slide_row,R.layout.debit_card,R.layout.debit_card_green};
+    private int[] layouts = {R.layout.activity_slide_row, R.layout.debit_card, R.layout.debit_card_green};
 
 
     @Override
@@ -45,21 +45,25 @@ public class DataPlanPin2Activity extends AppCompatActivity {
         setContentView(R.layout.activity_data_plan_pin2);
 
 
-       final ToggleButton toggle = (ToggleButton) findViewById(R.id.BtnData);
-        final LinearLayout showContent = (LinearLayout) findViewById(R.id.DataContent);
+        final RadioButton cardButton = findViewById(R.id.BtnData);
+        final RadioButton cashButton = findViewById(R.id.BtnData1);
+        final LinearLayout showContent = findViewById(R.id.DataContent);
 
-        toggle.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        cardButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
+
+                if (cardButton.isChecked()) {
                     showContent.setVisibility(View.VISIBLE);
-                } else {
+
+                } else if (cashButton.isChecked()) {
                     showContent.setVisibility(View.GONE);
                 }
             }
         });
 
+
         Spinner spinner = (Spinner) findViewById(R.id.SpinnerPay);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.array_name,android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.array_name, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
 
@@ -68,38 +72,39 @@ public class DataPlanPin2Activity extends AppCompatActivity {
         arrowBar3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(),DashboardActivity.class);
+                Intent intent = new Intent(getApplicationContext(), DashboardActivity.class);
                 startActivity(intent);
             }
         });
 
 
+        button = (Button) findViewById(R.id.BtnDataPin2);
+        btnFail = (Button) findViewById(R.id.BtnFail);
 
-
-        button  = (Button) findViewById(R.id.BtnDataPin2);
-        btnFail= findViewById(R.id.BtnFail);
-        bottomSheet = (NestedScrollView) findViewById(R.id.bottom_sheet_data);
-        bottomSheetBehavior = BottomSheetBehavior.from(bottomSheet);
+        final View dialogView = getLayoutInflater().inflate(R.layout.bottom_sheet, null);
+        final BottomSheetDialog dialog = new BottomSheetDialog(DataPlanPinActivity.this);
+        Button rate = dialogView.findViewById(R.id.BtnRateApp);
+        dialog.setContentView(dialogView);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view ) {
-                    bottomSheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+            public void onClick(View view) {
+                ((View) dialogView.getParent()).setBackgroundColor(getResources().getColor(android.R.color.transparent));
+                dialog.show();
             }
         });
-        btnFail.setOnClickListener(new View.OnClickListener() {
+
+        rate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                bottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                dialog.hide();
             }
         });
 
-
-        bottomSheetBehavior.setPeekHeight(0);
 
         dotsLayout = findViewById(R.id.dotsLayoutDataPin2);
         viewPager = findViewById(R.id.viewpagerDataPin2);
-        cardLayoutAdapter = new CardLayoutAdapter(layouts, DataPlanPin2Activity.this);
+        cardLayoutAdapter = new CardLayoutAdapter(layouts, DataPlanPinActivity.this);
         viewPager.setAdapter(cardLayoutAdapter);
         createDots(0);
 

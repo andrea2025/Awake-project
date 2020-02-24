@@ -47,15 +47,15 @@ public class TransactionHistoryActivity extends AppCompatActivity {
         listView = findViewById(R.id.listView);
         textView = findViewById(R.id.textView);
         ArrayList<HistoryList> historyList = new ArrayList<>();
-        historyList.add(new HistoryList(R.drawable.ic_bills,"GLOBACOM MCXVHJVDHJVDKJ- 1000","12/10/2002"));
-        historyList.add(new HistoryList(R.drawable.ic_phone,"DSTV JDJDJDFHHJDHJDHJ- 1000","12/10/2002"));
-        historyList.add(new HistoryList(R.drawable.ic_data,"STARTIMES DJFDJDHJHFHDD - 1000","12/10/2002"));
-        historyList.add(new HistoryList(R.drawable.ic_bills,"GLOBACOM JFDHFJDJFDJ- 1000","12/10/2002"));
-        historyList.add(new HistoryList(R.drawable.ic_phone,"DSTV JDJDJDFHDJKDJDHJDHFHF- 1000","12/10/2002"));
-        historyList.add(new HistoryList(R.drawable.ic_data,"STARTIMES DJFDJDDKJDJHDHJD - 1000","12/10/2002"));
-        historyList.add(new HistoryList(R.drawable.ic_bills,"GLOBACOM JFDHFJDJFDJ- 1000","12/10/2002"));
-        historyList.add(new HistoryList(R.drawable.ic_phone,"DSTV JDJDJDFHDJKDJDHJDHFHF- 1000","12/10/2002"));
-        historyList.add(new HistoryList(R.drawable.ic_data,"STARTIMES DJFDJDDKJDJHDHJD - 1000","12/10/2002"));
+        historyList.add(new HistoryList(R.drawable.ic_bills,"MTN - N850 - 08034604893","12/10/2019"));
+        historyList.add(new HistoryList(R.drawable.ic_phone,"GLO - 10MB @ N850 - 08034604893","12/10/2019"));
+        historyList.add(new HistoryList(R.drawable.ic_data,"DSTV Premuim - N8900 - 1month","12/10/2019"));
+        historyList.add(new HistoryList(R.drawable.ic_bills,"MTN - N850 - 08034604893","12/10/2019"));
+        historyList.add(new HistoryList(R.drawable.ic_phone,"GLO - 10MB @ N850 - 08034604893","12/10/2019"));
+        historyList.add(new HistoryList(R.drawable.ic_data,"DSTV Premuim - N8900 - 1month","12/10/2019"));
+        historyList.add(new HistoryList(R.drawable.ic_bills,"MTN - N850 - 08034604893","12/10/2019"));
+        historyList.add(new HistoryList(R.drawable.ic_phone,"GLO - 10MB @ N850 - 08034604893","12/10/2019"));
+        historyList.add(new HistoryList(R.drawable.ic_data,"DSTV Premuim - N8900 - 1month","12/10/2019"));
         historyAdapter = new HistoryAdapter(this,historyList);
         listView.setAdapter(historyAdapter);
 

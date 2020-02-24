@@ -8,12 +8,7 @@
         android:centerColor="#D32A0F"
         android:startColor="#F44D3B"
         android:endColor="#A00D05"
-
         android:type="linear"
        />
-    <padding android:left="5dp"
-        android:top="4dp"
-        android:right="4dp"
-        android:bottom="4dp" />
     <corners android:radius="15dp" />
 </shape>

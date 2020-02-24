@@ -19,14 +19,12 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
-import android.os.Handler;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.Toast;
 
 public class DashboardActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
 
@@ -76,7 +74,7 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
         BuyData.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), DataPlanPin2Activity.class);
+                Intent intent = new Intent(getApplicationContext(), DataPlanPinActivity.class);
                 startActivity(intent);
             }
         });

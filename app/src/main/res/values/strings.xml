@@ -53,18 +53,5 @@
     </string-array>
 
 
-    <string-array name="array_technology">
-        <item><b>MTN - N850 - 08034604893<br/>22/05/2019</b></item>
-    <item><b>GLO - 10MB @ N850 - 08034604893</b></item>
-    <item><b>DSTV Premuim - N8900 - 1month</b></item>
-        <item><b>MTN - N850 - 08034604893<br/>22/05/2019</b></item>
-        <item><b>GLO - 10MB @ N850 - 08034604893</b></item>
-        <item><b>DSTV Premuim - N8900 - 1month</b></item>
-        <item><b>MTN - N850 - 08034604893<br/>22/05/2019</b></item>
-        <item><b>GLO - 10MB @ N850 - 08034604893</b></item>
-        <item><b>DSTV Premuim - N8900 - 1month</b></item>
-
-
-    </string-array>
 
 </resources>

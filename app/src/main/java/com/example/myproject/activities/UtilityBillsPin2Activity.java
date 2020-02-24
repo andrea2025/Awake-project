@@ -5,6 +5,7 @@ import androidx.core.content.ContextCompat;
 import androidx.core.widget.NestedScrollView;
 import androidx.viewpager.widget.ViewPager;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -21,6 +22,7 @@ import android.widget.ToggleButton;
 import com.example.myproject.R;
 import com.example.myproject.adapters.AddFundCardLayoutAdapter;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
+import com.google.android.material.bottomsheet.BottomSheetDialog;
 
 public class UtilityBillsPin2Activity extends AppCompatActivity {
     Button button;
@@ -41,41 +43,22 @@ public class UtilityBillsPin2Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_utility_bills_pin2);
 
-
-//        final RadioButton radioButton = (RadioButton) findViewById(R.id.BtnBill);
-//        final LinearLayout showContent = (LinearLayout) findViewById(R.id.BillContent);
-//
-//        radioButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-//            @Override
-//            public void onCheckedChanged(CompoundButton buttonView,
-//                                         boolean isChecked) {
-//                if (radioButton.isChecked()) {
-//
-//                    showContent.setVisibility(View.VISIBLE);
-//
-//                }
-//                else if(!radioButton.isChecked())
-//                {
-//                    showContent.setVisibility(View.GONE);
-//
-//                }
-//
-//            }
-//        });
-
-
-        final ToggleButton toggle = (ToggleButton) findViewById(R.id.BtnBill);
+        final RadioButton cardButton = (RadioButton) findViewById(R.id.BtnBill);
+        final RadioButton cashButton = (RadioButton) findViewById(R.id.BtnBill2);
         final LinearLayout showContent = (LinearLayout) findViewById(R.id.BillContent);
 
-        toggle.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        cardButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
+
+                if (cardButton.isChecked()) {
                     showContent.setVisibility(View.VISIBLE);
-                } else {
+
+                } else if (cashButton.isChecked()){
                     showContent.setVisibility(View.GONE);
                 }
             }
         });
+
         Spinner spinner = (Spinner) findViewById(R.id.SpinnerBouquet);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.array_name2,android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -91,34 +74,32 @@ public class UtilityBillsPin2Activity extends AppCompatActivity {
             }
         });
 
-        BtnReceipt = findViewById(R.id.BtnReceipt);
-        BtnReceipt.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                Intent intent = new Intent(getApplicationContext(),UtilityBillReceiptActivity.class);
-                startActivity(intent);
-            }
-        });
-
 
         button  = (Button) findViewById(R.id.BtnUtilityPin2);
-        bottomSheet = (NestedScrollView) findViewById(R.id.bottom_sheet_utility);
-        bottomSheetBehavior = BottomSheetBehavior.from(bottomSheet);
+
+        final View dialogView = getLayoutInflater().inflate(R.layout.bottom_sheet, null);
+        final BottomSheetDialog dialog = new BottomSheetDialog(UtilityBillsPin2Activity.this);
+        Button rate = dialogView.findViewById(R.id.BtnRateApp);
+        dialog.setContentView(dialogView);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view ) {
-                if (bottomSheetBehavior.getState() != BottomSheetBehavior.STATE_EXPANDED){
-                    bottomSheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+            public void onClick(View view) {
+                ((View) dialogView.getParent()).setBackgroundColor(getResources().getColor(android.R.color.transparent));
+                dialog.show();
+            }
+        });
 
-                }else {
-                    bottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
-                }
+
+        rate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(),UtilityBillReceiptActivity.class);
+                startActivity(intent);
+                dialog.hide();
 
             }
         });
-        bottomSheetBehavior.setPeekHeight(0);
 
         dotLayouts = findViewById(R.id.dotsLayoutBillPin2);
         viewPager = findViewById(R.id.viewpagerBillPin2);

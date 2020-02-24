@@ -184,22 +184,41 @@
                     </RelativeLayout>
                 </LinearLayout>
 
+<RadioGroup
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
 
+    <RadioButton
 
-                <ToggleButton
+        android:id="@+id/radioLink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:alpha="0.5"
 
-                    android:id="@+id/radioLink"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:alpha="0.5"
-                    android:padding="4dp"
-                    android:background="#0A3F99"
-                    android:text="Pay with Card"
-                    android:fontFamily="@font/nunito_sans"
-                    android:textColor="#000"
-                    android:textSize="12dp"
-                    />
+        android:backgroundTint="@color/colorBlue"
+        android:text="Pay with Card"
+        android:fontFamily="@font/nunito_sans"
+        android:textColor="#000"
+        android:textSize="12dp"
+        />
+
+    <RadioButton
+
+        android:id="@+id/radioLink1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:alpha="0.5"
+    android:layout_marginLeft="10dp"
+        android:text="Pay with Cash"
+        android:fontFamily="@font/nunito_sans"
+        android:textColor="#000"
+        android:textSize="12dp"
+        />
+</RadioGroup>
+
 
                 <LinearLayout
                     android:id="@+id/ShowContent"
